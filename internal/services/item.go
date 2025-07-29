@@ -13,11 +13,11 @@ func DecodeAndValidate(w http.ResponseWriter, r *http.Request) (*models.Item, er
 	var item models.Item
 
 	if err := json.NewDecoder(r.Body).Decode(&item); err != nil {
-		return nil, errors.New("Erro ao decodificar o item")
+		return nil, errors.New("erro ao decodificar o item")
 	}
 
 	if err := validators.ValidateItem(&item); err != nil {
-		return nil, errors.New("Erro de Validação" + err.Error())
+		return nil, errors.New("erro de Validação" + err.Error())
 
 	}
 
