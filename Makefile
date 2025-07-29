@@ -3,7 +3,7 @@ test:
 lint:
 	docker run --rm -v ${PWD}:/app -w /app golangci/golangci-lint:v2.3.0 golangci-lint run
 run: 
-	docker compose up --build
+	docker compose up --build -d
 stop:
 	docker compose down -rmi all -v
 
